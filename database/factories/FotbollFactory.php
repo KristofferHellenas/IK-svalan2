@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Fotboll::class, function (Faker $faker) {
 
-    $teams = [ 'F08', 'F09', 'P08', 'P09','Korpen'];
+    $teams = ['F07','F08','F09','P07','P08','P09','Korpen'];
     return [
         'grupp' => $faker->unique()->randomElement($teams),
     ];

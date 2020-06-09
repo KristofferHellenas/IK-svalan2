@@ -11,6 +11,6 @@ class FotbollSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Fotboll::class, 5)->create();
+        factory(App\Fotboll::class, 7)->create();
     }
 }

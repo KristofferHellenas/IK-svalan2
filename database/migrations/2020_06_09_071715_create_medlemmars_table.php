@@ -18,6 +18,7 @@ class CreateMedlemmarsTable extends Migration
             $table->string('name', 50);
             $table->date('birthday');
             $table->string('email');
+            $table->string('password');
             $table->boolean('membership');
             $table->timestamps();
         });

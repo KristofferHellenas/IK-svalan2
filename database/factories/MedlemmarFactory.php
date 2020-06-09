@@ -10,6 +10,7 @@ $factory->define(Medlemmar::class, function (Faker $faker) {
         'name' => $faker->name,
         'birthday' => $faker->dateTimeBetween($startDate = '-80 years', $endDate = '-10 years', $timezone = null),
         'email' => $faker->email,
+        'password' => 'password',
         'membership' => $faker->boolean($chanceOfGettingTrue = 80)
     ];
 });

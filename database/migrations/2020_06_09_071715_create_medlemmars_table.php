@@ -15,11 +15,12 @@ class CreateMedlemmarsTable extends Migration
     {
         Schema::create('medlemmars', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
+            $table->string('firstname', 50);
+            $table->string('lastname', 50);
             $table->date('birthday');
             $table->string('email');
             $table->string('password');
-            $table->boolean('membership');
+            $table->boolean('member_fee');
             $table->timestamps();
         });
     }

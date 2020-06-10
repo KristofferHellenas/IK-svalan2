@@ -13,9 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             MedlemmarSeeder::class,
-            FotbollSeeder::class,
-            SkidorSeeder::class,
-            GymnastikSeeder::class
         ]);
     }
 }

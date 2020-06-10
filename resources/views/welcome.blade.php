@@ -85,17 +85,21 @@
         @endif
 
         <div class="content">
-            <div class="title m-b-md">
+            <div class="title">
                 Ik Svalan
             </div>
 
             <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
+                <a href="/">Home</a>
                 <a href="/admin">Admin</a>
                 <a href="/member">Member</a>
                 <a href="/teammember">Team Member</a>
             </div>
         </div>
+    </div>
+
+    <div class="container">
+        @yield('content')
     </div>
 
 

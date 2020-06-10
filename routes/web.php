@@ -21,13 +21,13 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-// Route::get('/teammember', function () {
-//     return view('teammember');
-// });
+Route::get('/teammember', function () {
+    return view('teammember');
+});
 
-// Route::get('/member', function () {
-//     return view('member');
-// });
+Route::get('/member', function () {
+    return view('member');
+});
 
 Auth::routes();
 

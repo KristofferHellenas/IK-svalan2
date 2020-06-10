@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gymnastik extends Model
+class Activity extends Model
 {
-    //
+    public $timestamps = false;
 }

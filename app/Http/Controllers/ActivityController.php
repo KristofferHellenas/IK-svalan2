@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Skidor;
+use App\Activity;
 use Illuminate\Http\Request;
 
-class SkidorController extends Controller
+class ActivityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class SkidorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Skidor  $skidor
+     * @param  \App\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function show(Skidor $skidor)
+    public function show(Activity $activity)
     {
         //
     }
@@ -52,10 +52,10 @@ class SkidorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Skidor  $skidor
+     * @param  \App\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit(Skidor $skidor)
+    public function edit(Activity $activity)
     {
         //
     }
@@ -64,10 +64,10 @@ class SkidorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Skidor  $skidor
+     * @param  \App\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Skidor $skidor)
+    public function update(Request $request, Activity $activity)
     {
         //
     }
@@ -75,10 +75,10 @@ class SkidorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Skidor  $skidor
+     * @param  \App\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Skidor $skidor)
+    public function destroy(Activity $activity)
     {
         //
     }

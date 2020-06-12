@@ -11,6 +11,9 @@ class TeamSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Team::class, 15)->create();
+        factory(App\Team::class, 15)->create()->each(function ($team){
+            $slumptal = mt_rand(2,7);
+            $team->users()->attach(App\User::all()->random($slumptal));
+        });
     }
 }

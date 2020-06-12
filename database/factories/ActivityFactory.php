@@ -11,3 +11,4 @@ $factory->define(Activity::class, function (Faker $faker) {
         'name' => $faker->unique()->randomElement($activities),
     ];
 });
+ 

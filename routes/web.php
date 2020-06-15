@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('/admin', 'TeamController@index');
 
+Route::post('/admin', 'TeamController@store');
+
 Route::get('/teammember', function () {
     return view('teammember');
 });

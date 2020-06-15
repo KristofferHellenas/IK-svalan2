@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Medlemmar;
+use App\User;
 use Illuminate\Http\Request;
 
-class MedlemmarController extends Controller
+class Users extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        // Get all the users from the database
+        $users = User::all();
+        // $users = DB::table('users')->get();
+
+        return view('admin', [
+            'users' => $users
+        ]);
     }
 
     /**
@@ -41,10 +47,10 @@ class MedlemmarController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Medlemmar  $medlemmar
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Medlemmar $medlemmar)
+    public function show(User $user)
     {
         //
     }
@@ -52,10 +58,10 @@ class MedlemmarController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Medlemmar  $medlemmar
+     * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medlemmar $medlemmar)
+    public function edit(User $User)
     {
         //
     }
@@ -64,10 +70,10 @@ class MedlemmarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Medlemmar  $medlemmar
+     * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medlemmar $medlemmar)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -75,10 +81,10 @@ class MedlemmarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Medlemmar  $medlemmar
+     * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medlemmar $medlemmar)
+    public function destroy(User $user)
     {
         //
     }

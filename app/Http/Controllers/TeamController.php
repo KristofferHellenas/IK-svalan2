@@ -16,7 +16,6 @@ class TeamController extends Controller
     {
         // Get all the teams from the database
         $teams = Team::all();
-        // $teams = DB::table('teams')->get();
 
         return view('admin', [
             'teams' => $teams
@@ -41,7 +40,17 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // error_log(request('new_team'));
+        // error_log(request('new_activity'));
+
+        $team = new Team();
+
+        $team->name = request('new_team');
+        $team->activity_id = request('new_activity');
+
+        $team->save();
+
+        return redirect('/admin')->with('mssg', 'A team has been added!');
     }
 
     /**

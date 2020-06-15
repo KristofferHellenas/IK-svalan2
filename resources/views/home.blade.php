@@ -14,6 +14,16 @@
                         </div>
                     @endif
 
+                    @can('isAdmin')
+                    <p>You're an admin</p>
+
+                    @elsecan('isMember')
+                    <p>You're a member</p> 
+
+                    @elsecan('isUser')
+                    <p>You're a user</p>
+
+                    @endcan
                     You are logged in!
                 </div>
             </div>

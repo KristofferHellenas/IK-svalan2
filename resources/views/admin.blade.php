@@ -2,12 +2,6 @@
 
 @section('content')
 
-
-@foreach($teams as $team)
-<p>{{ $team->name }}</p>
-@endforeach
-
-
 <h3>Admin</h3>
 
 <form>
@@ -40,5 +34,22 @@
     </div>
   </div>
 </form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Lag</th>
+      <th scope="col">Activity ID</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($teams as $team)
+    <tr>
+      <td>{{ $team->name }}</td>
+      <td>{{ $team->activity_id }}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
 
 @endsection

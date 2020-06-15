@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layouts.app')
 
 @section('content')
 <h3>Admin</h3>

@@ -30,6 +30,10 @@ Route::get('/admin/users', 'Users@index');
 
 Route::post('/admin/users', 'Users@store');
 
+Route::get('/admin/activities', 'ActivityController@index');
+
+Route::post('/admin/activities', 'ActivityController@store');
+
 Route::get('/teammember', function () {
     return view('teammember');
 });

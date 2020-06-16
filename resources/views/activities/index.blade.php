@@ -2,18 +2,14 @@
 
 @section("content")
 
-<h1>Lag</h1>
+<h1>Aktiviteter</h1>
 
-<!-- Add team form -->
+<!-- Add activities form -->
 <form action="/admin" method="POST">
   @csrf
   <div class="row mt-3">
     <div class="col">
-      <label for="exampleInputEmail1">Lägg till nytt lag</label>
-      <input type="text" class="form-control" name="new_team">
-    </div>
-    <div class="col">
-      <label for="exampleInputEmail1">Activity ID</label>
+      <label for="exampleInputEmail1">Lägg till ny aktivitet</label>
       <input type="text" class="form-control" name="new_activity">
     </div>
   </div>
@@ -23,15 +19,15 @@
 <table class="table mt-3">
   <thead>
     <tr>
-      <th scope="col">Lag</th>
-      <th scope="col">Idrott(Activity_id)</th>
+      <th scope="col">Aktivitet</th>
+      <th scope="col">ID</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($teams as $team)
+    @foreach($activities as $activity)
     <tr>
-      <td>{{ $team->name }}</td>
-      <td>{{ $team->activity->name }}</td>
+      <td>{{ $activity->name }}</td>
+      <td>{{ $activity->id }}</td>
     </tr>
     @endforeach
   </tbody>

@@ -5,12 +5,12 @@
 <h1>Aktiviteter</h1>
 
 <!-- Add activities form -->
-<form action="/admin" method="POST">
+<form action="/admin/activities" method="POST">
   @csrf
   <div class="row mt-3">
     <div class="col">
       <label for="exampleInputEmail1">Lägg till ny aktivitet</label>
-      <input type="text" class="form-control" name="new_activity">
+      <input type="text" class="form-control" name="name">
     </div>
   </div>
   <button type="submit" class="btn btn-primary mt-3">Lägg till</button>

@@ -41,8 +41,6 @@ Route::get('/member', function () {
     return view('member');
 });
 
-Route::post('/admin', 'Users@store');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

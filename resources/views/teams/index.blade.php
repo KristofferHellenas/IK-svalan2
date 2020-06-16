@@ -5,7 +5,7 @@
 <h1>Lag</h1>
 
 <!-- Add team form -->
-<form action="/admin" method="POST">
+<form  method="POST" action="/admin/teams">
   @csrf
   <div class="row mt-3">
     <div class="col">

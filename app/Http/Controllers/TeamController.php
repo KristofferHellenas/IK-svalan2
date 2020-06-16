@@ -45,7 +45,7 @@ class TeamController extends Controller
 
         $team->save();
 
-        return redirect('/admin')->with('mssg', 'A team has been added!');
+        return redirect('/admin/teams')->with('msg', 'A team has been added!');
     }
 
     /**

@@ -5,7 +5,7 @@
 <h1>Användare</h1>
 
 <!-- Add member form -->
-<form action="/admin" method="POST">
+<form  method="POST" action="/admin/users">
   @csrf
   <div class="row">
     <div class="col">

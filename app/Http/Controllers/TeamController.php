@@ -20,6 +20,13 @@ class TeamController extends Controller
         return view('teams.index', ['teams' => $teams]);
     }
 
+    //Hämtar och lägger in alla lagnamn
+    public function name()
+    {
+        $name = Team::all();
+        return view('welcome', ['name' => $name]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,7 +52,7 @@ class TeamController extends Controller
 
         $team->save();
 
-        return redirect('/admin')->with('mssg', 'A team has been added!');
+        return redirect('/admin/teams')->with('msg', 'A team has been added!');
     }
 
     /**

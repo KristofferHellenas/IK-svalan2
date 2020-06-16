@@ -15,7 +15,7 @@
     @foreach($teams as $team)
     <tr>
       <td>{{ $team->name }}</td>
-      <td>{{ $team->activity_id->name }}</td>
+      <td>{{ $team->activity->name }}</td>
     </tr>
     @endforeach
   </tbody>

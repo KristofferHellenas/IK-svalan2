@@ -12,4 +12,8 @@ class Team extends Model
     {
         return $this->belongsToMany('App\User');
     }
+    public function activity()
+    {
+        return $this->belongsTo('App\Activity');
+    }
 }

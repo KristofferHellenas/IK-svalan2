@@ -5,8 +5,7 @@
 <h1>Lag</h1>
 
 <!-- Add team form -->
-<!-- Add team form -->
-<form action="/admin" method="POST">
+<form  method="POST" action="/admin/teams">
   @csrf
   <div class="row mt-3">
     <div class="col">
@@ -25,7 +24,7 @@
   <thead>
     <tr>
       <th scope="col">Lag</th>
-      <th scope="col">Activity ID</th>
+      <th scope="col">Idrott(Activity_id)</th>
     </tr>
   </thead>
   <tbody>

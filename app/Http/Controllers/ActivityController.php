@@ -16,7 +16,7 @@ class ActivityController extends Controller
     {
         $activities = Activity::all();
 
-        return view('teams.index', ['activities' => $activities]);
+        return view('activities.index', ['activities' => $activities]);
     }
 
     /**
@@ -37,7 +37,13 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $activity = new Activity();
+
+        $activity->name = request('name');
+
+        $activity->save();
+
+        return redirect('/admin/activities')->with('msg', 'A activity has been added!');
     }
 
     /**

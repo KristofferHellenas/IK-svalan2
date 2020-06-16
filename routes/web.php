@@ -13,13 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/admin', function () {
     return view('admin');
 });
+Route::get('/', 'TeamController@name');
 
 Route::get('/admin/teams', 'TeamController@index');
 
@@ -29,6 +28,10 @@ Route::get('/admin/users', 'Users@index');
 
 Route::post('/admin/users', 'Users@store');
 
+Route::get('/admin/activities', 'ActivityController@index');
+
+Route::post('/admin/activities', 'ActivityController@store');
+
 Route::get('/teammember', function () {
     return view('teammember');
 });
@@ -36,8 +39,6 @@ Route::get('/teammember', function () {
 Route::get('/member', function () {
     return view('member');
 });
-
-Route::post('/admin', 'Users@store');
 
 Auth::routes();
 

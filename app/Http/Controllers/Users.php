@@ -55,7 +55,7 @@ class Users extends Controller
 
         $user->save();
 
-        return redirect('/admin')->with('mssg', 'A user has been added!');
+        return redirect('/admin/users')->with('msg', 'A user has been added!');
     }
 
     /**

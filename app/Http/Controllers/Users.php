@@ -21,6 +21,12 @@ class Users extends Controller
         return view('users.index', ['users' => $users]);
     }
 
+    public function paidCount()
+    {
+        $paidUsers = DB::table('users')->where('member_fee', '=', 1)->count;
+        return view('users.index', ['paidcount' => $paidUsers]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

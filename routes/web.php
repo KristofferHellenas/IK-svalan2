@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/admin', function () {
     return view('admin');
 });
+Route::get('/', 'TeamController@name');
 
 Route::get('/admin/teams', 'TeamController@index');
 

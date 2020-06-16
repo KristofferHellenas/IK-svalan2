@@ -18,9 +18,7 @@ class Users extends Controller
         $users = User::all();
         // $users = DB::table('users')->get();
 
-        return view('admin', [
-            'users' => $users
-        ]);
+        return view('users.index', ['users' => $users]);
     }
 
     /**

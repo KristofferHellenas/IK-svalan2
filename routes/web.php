@@ -25,7 +25,9 @@ Route::get('/admin/teams', 'TeamController@index');
 
 Route::post('/admin/teams', 'TeamController@store');
 
-// Route::get('/admin/users', 'Users@index');
+Route::get('/admin/users', 'Users@index');
+
+Route::post('/admin/users', 'Users@store');
 
 Route::get('/teammember', function () {
     return view('teammember');

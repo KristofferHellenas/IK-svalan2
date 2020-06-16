@@ -18,9 +18,7 @@ class Users extends Controller
         $users = User::all();
         // $users = DB::table('users')->get();
 
-        return view('admin', [
-            'users' => $users
-        ]);
+        return view('users.index', ['users' => $users]);
     }
 
     /**
@@ -41,7 +39,17 @@ class Users extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+
+        $user->firstname = request('first_name');
+        $user->lastname = request('last_name');
+        $user->birthday = request('birthday');
+        $user->email = request('email');
+        $user->password = request('password');
+
+        $user->save();
+
+        return redirect('/admin')->with('mssg', 'A user has been added!');
     }
 
     /**

@@ -38,9 +38,6 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        // error_log(request('new_team'));
-        // error_log(request('new_activity'));
-
         $team = new Team();
 
         $team->name = request('new_team');

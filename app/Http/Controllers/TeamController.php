@@ -20,6 +20,13 @@ class TeamController extends Controller
         return view('teams.index', ['teams' => $teams]);
     }
 
+    //Hämtar och lägger in alla lagnamn
+    public function name()
+    {
+        $name = Team::all();
+        return view('welcome', ['name' => $name]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -6,35 +6,36 @@
 
 <!-- Add member form -->
 <form action="/admin" method="POST">
+  @csrf
   <div class="row">
     <div class="col">
       <label for="exampleInputEmail1">Förnamn</label>
-      <input type="text" class="form-control" placeholder="ex. Johan">
+      <input type="text" class="form-control" placeholder="ex. John" name="first_name">
     </div>
     <div class="col">
       <label for="exampleInputEmail1">Efternamn</label>
-      <input type="text" class="form-control" placeholder="ex. Andersson">
+      <input type="text" class="form-control" placeholder="ex. Smith" name="last_name">
     </div>
   </div>
 
   <div class="row">
     <div class="col mt-3">
       <label for="exampleInputEmail1">Födelsedag</label>
-      <input type="text" class="form-control" placeholder="ex. 1989-03-14">
+      <input type="text" class="form-control" placeholder="ex. 1989-03-14" name="birthday">
     </div>
     <div class="col mt-3">
       <label for="exampleInputEmail1">Email</label>
-      <input type="email" class="form-control" placeholder="ex. john@tests.com">
+      <input type="email" class="form-control" placeholder="ex. john@tests.com" name="email">
     </div>
   </div>
 
   <div class="row">
     <div class="col mt-3">
       <label for="exampleInputEmail1">Lösenord</label>
-      <input type="text" class="form-control" placeholder="Lösenord">
+      <input type="text" class="form-control" placeholder="Lösenord" name="password">
     </div>
   </div>
-  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  <button type="submit" class="btn btn-primary mt-3">Lägg till</button>
 </form>
 
 <table class="table mt-3">

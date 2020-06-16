@@ -5,6 +5,9 @@
 <h3>Admin</h3>
 <p>{{ session('mssg') }}</p>
 
+<h3><a href="/admin/users">Användare</a></h3>
+<h3><a href="/admin/teams">Lag</a></h3>
+<h3><a href="">Aktiviteter</a></h3>
 <!-- Add member form -->
 <form action="/admin" method="POST">
   <div class="row">
@@ -53,22 +56,5 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Lag</th>
-      <th scope="col">Activity ID</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach($teams as $team)
-    <tr>
-      <td>{{ $team->name }}</td>
-      <td>{{ $team->activity_id }}</td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
 
 @endsection

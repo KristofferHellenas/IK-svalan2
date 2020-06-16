@@ -17,9 +17,7 @@ class TeamController extends Controller
         // Get all the teams from the database
         $teams = Team::all();
 
-        return view('admin', [
-            'teams' => $teams
-        ]);
+        return view('teams.index', ['teams' => $teams]);
     }
 
     /**

@@ -17,9 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', 'TeamController@index');
+Route::get('/admin', function () {
+    return view('admin');
+});
 
-Route::post('/admin', 'TeamController@store');
+Route::get('/admin/teams', 'TeamController@index');
+
+Route::post('/admin/teams', 'TeamController@store');
+
+// Route::get('/admin/users', 'Users@index');
 
 Route::get('/teammember', function () {
     return view('teammember');

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@can('isAdmin')
 <h3>Admin</h3>
 <p>{{ session('mssg') }}</p>
 
@@ -9,4 +9,5 @@
 <h3><a href="/admin/teams">Lag</a></h3>
 <h3><a href="/admin/activities">Aktiviteter</a></h3>
 
+@endcan
 @endsection

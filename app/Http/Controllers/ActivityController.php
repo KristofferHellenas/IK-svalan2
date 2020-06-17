@@ -54,7 +54,7 @@ class ActivityController extends Controller
      */
     public function show(Activity $activity)
     {
-        //
+        return view('activities.show', ['activity' => $activity]);
     }
 
     /**
@@ -86,8 +86,11 @@ class ActivityController extends Controller
      * @param  \App\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Activity $activity)
+    public function destroy($id)
     {
-        //
+        $activity = Activity::findOrFail($id);
+        $activity->delete();
+
+        return redirect('/admin/activities')->with('msg', 'A activity has been removed!');
     }
 }

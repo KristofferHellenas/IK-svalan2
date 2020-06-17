@@ -27,7 +27,7 @@
   <tbody>
     @foreach($activities as $activity)
     <tr>
-      <td>{{ $activity->name }}</td>
+      <td><a href="/admin/activities/{{$activity->id}}">{{ $activity->name }}</a></td>
       <td>{{ $activity->id }}</td>
     </tr>
     @endforeach

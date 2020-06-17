@@ -27,8 +27,9 @@ Route::get('/', 'TeamController@name');
 Route::get('/user', 'Users@user');
 Route::resource('/admin/users', 'Users');
 Route::resource('/admin/teams', 'TeamController');
-Route::get('/admin/activities', 'ActivityController@index');
-Route::post('/admin/activities', 'ActivityController@store');
+Route::resource('/admin/activities', 'ActivityController');
+// Route::get('/admin/activities', 'ActivityController@index');
+// Route::post('/admin/activities', 'ActivityController@store');
 
 Route::get('/teammember', function () {
     return view('teammember');

@@ -82,7 +82,7 @@ class Users extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view ('show', ['user' => $user]);
     }
 
     /**

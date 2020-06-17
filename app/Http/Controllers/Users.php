@@ -97,7 +97,7 @@ class Users extends Controller
      * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $User)
+    public function edit(User $user)
     {
         return view('users.show', ['user' => $user]);
     }

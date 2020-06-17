@@ -114,8 +114,11 @@ class Users extends Controller
      * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect('/admin/users')->with('msg', 'A user has been removed!');
     }
 }

@@ -20,20 +20,16 @@ Route::get('/admin', function () {
 });
 Route::get('/', 'TeamController@name');
 
-Route::get('/admin/teams', 'TeamController@index');
-
-Route::post('/admin/teams', 'TeamController@store');
-
-Route::get('/admin/users', 'Users@index');
-
-Route::get('/admin/users/{{ id }}', 'Users@show');
+// Route::get('/admin/teams', 'TeamController@index');
+// Route::post('/admin/teams', 'TeamController@store');
+// Route::get('/admin/users', 'Users@index');
+// Route::get('/admin/users/{id}', 'Users@show');
+// Route::post('/admin/users', 'Users@store');
 
 Route::get('/user', 'Users@user');
-
-Route::post('/admin/users', 'Users@store');
-
+Route::resource('/admin/users', 'Users');
+Route::resource('/admin/teams', 'TeamController');
 Route::get('/admin/activities', 'ActivityController@index');
-
 Route::post('/admin/activities', 'ActivityController@store');
 
 Route::get('/teammember', function () {

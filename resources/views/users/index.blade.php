@@ -39,32 +39,7 @@
   <button type="submit" class="btn btn-primary mt-3">Lägg till</button>
 </form>
 
-<!-- Change member form -->
-<form action="/admin/users" method="POST">
-  @csrf
-  @method('put')
-  <div class="row">
-    <div class="col mt-3">
-      <label for="firstname">Förnamn</label>
-      <input type="text" class="form-control" name="firstname" value="">
-    </div>
-    <div class="col mt-3">
-      <label for="lastname">Efternamn</label>
-      <input type="text" class="form-control" name="lastname" value="">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col mt-3">
-      <label for="birthday">Födelsedag</label>
-      <input type="date" class="form-control" name="birthday" value="">
-    </div>
-    <div class="col mt-3">
-      <label for="country">Email</label>
-      <input type="email" class="form-control" name="email" value="">
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary mt-3">Ändra</button>
-</form>
+
 
 <p>{{ $paidcount }} Betalande medlemmar</p>
 <p>{{ $paidyouth }} Betalande ungdomar</p>

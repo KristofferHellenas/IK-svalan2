@@ -2,6 +2,7 @@
 
 @section("content")
 
+<a href="{{ route('home') }}">&laquo; Tillbaka</a>
 <h1>Användare</h1>
 
 <!-- Add member form -->

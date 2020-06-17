@@ -2,6 +2,7 @@
 
 @section("content")
 
+<a href="{{ route('home') }}">&laquo; Tillbaka</a>
 <h1>Lag</h1>
 
 <!-- Add team form -->

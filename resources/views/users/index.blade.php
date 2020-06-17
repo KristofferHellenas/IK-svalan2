@@ -37,7 +37,10 @@
   </div>
   <button type="submit" class="btn btn-primary mt-3">Lägg till</button>
 </form>
-
+<p>{{ $paidcount }} Betalande medlemmar</p>
+<p>{{ $paidyouth }} Betalande ungdomar</p>
+<p>{{ $paidadult }} Betalande vuxna</p>
+<p>{{ $sum }}Kr</p>
 <table class="table mt-3">
   <thead>
     <tr>

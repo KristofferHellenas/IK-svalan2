@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Users extends Controller
 {
@@ -18,13 +19,19 @@ class Users extends Controller
         $users = User::all();
         // $users = DB::table('users')->get();
 
-        return view('users.index', ['users' => $users]);
-    }
+        // Antal betalande medlemmar 
+        $paidUsers = DB::table('users')->where('member_fee', '=', 1)->count();
 
-    public function paidCount()
-    {
-        $paidUsers = DB::table('users')->where('member_fee', '=', 1)->count;
-        return view('users.index', ['paidcount' => $paidUsers]);
+        $paidyouth = DB::table('users')->whereYear('birthday', '>=', '2002')->where('member_fee', '=', 1)->count();
+
+        $paidadult = DB::table('users')->whereYear('birthday', '<', '2002')->where('member_fee', '=', 1)->count();
+
+        // 300 ungdom 500 vuxen
+        $youth = $paidyouth * 300;
+        $adult = $paidadult * 500;
+        $sum = $adult + $youth;
+
+        return view('users.index', ['users' => $users,'paidcount' => $paidUsers, 'paidyouth' => $paidyouth, 'paidadult' => $paidadult, 'sum' => $sum]);
     }
 
     /**

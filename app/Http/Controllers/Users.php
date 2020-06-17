@@ -93,7 +93,7 @@ class Users extends Controller
      */
     public function edit(User $User)
     {
-        //
+        return view('/member',['user' => $User]);
     }
 
     /**

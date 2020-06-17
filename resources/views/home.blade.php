@@ -23,13 +23,13 @@
                     <h3><a href="/admin/activities">Aktiviteter</a></h3>
 
                     @elsecan('isMember')
-                    <p>You're a member</p>
+                    <a href="/member">Mina sidor</a>
 
                     @elsecan('isUser')
                     <a href="/user">Mina sidor</a>
-                    <br>
-
+                    
                     @endcan
+                    <br>
                     Du är inloggad!
                 </div>
             </div>

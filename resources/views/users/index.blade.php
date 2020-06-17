@@ -5,7 +5,7 @@
 <h1>Användare</h1>
 
 <!-- Add member form -->
-<form  method="POST" action="/admin/users">
+<form method="POST" action="/admin/users">
   @csrf
   <div class="row">
     <div class="col">
@@ -40,8 +40,8 @@
 
 <!-- Change member form -->
 <form action="/admin/users" method="POST">
-    @csrf 
-    @method('put')
+  @csrf
+  @method('put')
   <div class="row">
     <div class="col mt-3">
       <label for="firstname">Förnamn</label>
@@ -62,7 +62,7 @@
       <input type="email" class="form-control" name="email" value="">
     </div>
   </div>
-    <button type="submit" class="btn btn-primary mt-3">Ändra</button>
+  <button type="submit" class="btn btn-primary mt-3">Ändra</button>
 </form>
 
 <p>{{ $paidcount }} Betalande medlemmar</p>
@@ -79,8 +79,10 @@
   <tbody>
     @foreach($users as $user)
     <tr>
-      <td>{{ $user->firstname }}</td>
+      <td><a href="/admin/users/{{$user->id}}">{{ $user->firstname }}</a></td>
       <td>{{ $user->lastname }}</td>
+
+
     </tr>
     @endforeach
   </tbody>

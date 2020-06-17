@@ -10,9 +10,9 @@
 
 
 <!-- Change member form -->
-<form action="/admin/users" method="POST">
+<form action="/admin/users/{{$user->id}}" method="POST">
     @csrf
-    @method('put')
+    @method('patch')
     <div class="row">
         <div class="col mt-3">
             <label for="firstname">Förnamn</label>

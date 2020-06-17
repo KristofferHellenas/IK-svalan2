@@ -43,6 +43,12 @@ class Users extends Controller
         return view('user', ['user' => $user]);
     }
 
+    public function update(Request $request, User $user)
+    {
+        $user->update(['email' => $request->email]);
+        return back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -93,6 +99,10 @@ class Users extends Controller
      */
     public function edit(User $user)
     {
+<<<<<<< HEAD
+=======
+        return view('users.show', ['user' => $user]);
+>>>>>>> 1084363b9086ea9be1dd4168528dc6c7664c1bee
     }
 
     /**
@@ -102,16 +112,6 @@ class Users extends Controller
      * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {
-        $user->firstname = $request->firstname;
-        $user->lastname = $request->lastname;
-        $user->birthday = $request->birthday;
-        $user->email = $request->email;
-        $user->updated_at = now();
-        $user->save();
-        return view('users.show', ['user' => $user]);
-    }
 
     /**
      * Remove the specified resource from storage.

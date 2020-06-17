@@ -2,10 +2,11 @@
 
 @section("content")
 
+<a href="{{ route('home') }}">&laquo; Tillbaka</a>
 <h1>Användare</h1>
 
 <!-- Add member form -->
-<form  method="POST" action="/admin/users">
+<form method="POST" action="/admin/users">
   @csrf
   <div class="row">
     <div class="col">
@@ -37,6 +38,9 @@
   </div>
   <button type="submit" class="btn btn-primary mt-3">Lägg till</button>
 </form>
+
+
+
 <p>{{ $paidcount }} Betalande medlemmar</p>
 <p>{{ $paidyouth }} Betalande ungdomar</p>
 <p>{{ $paidadult }} Betalande vuxna</p>
@@ -51,8 +55,10 @@
   <tbody>
     @foreach($users as $user)
     <tr>
-      <td>{{ $user->firstname }}</td>
+      <td><a href="/admin/users/{{$user->id}}">{{ $user->firstname }}</a></td>
       <td>{{ $user->lastname }}</td>
+
+
     </tr>
     @endforeach
   </tbody>

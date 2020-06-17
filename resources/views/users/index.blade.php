@@ -40,11 +40,11 @@
 </form>
 
 
-
+<h2>Ekonomi</h2>
 <p>{{ $paidcount }} Betalande medlemmar</p>
 <p>{{ $paidyouth }} Betalande ungdomar</p>
 <p>{{ $paidadult }} Betalande vuxna</p>
-<p>{{ $sum }}Kr</p>
+<p>Årlig inkomst: {{ $sum }}Kr</p>
 <table class="table mt-3">
   <thead>
     <tr>

@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Ändra eller ta bort medlem</h1>
+<a href="{{ route('home') }}">&laquo; Tillbaka</a>
+<h1><u>{{$user->firstname}} {{$user->lastname}}</u></h1>
 @isset($user)
 
+<h2>Ändra eller ta bort medlem</h2>
 
 
 
@@ -32,6 +34,11 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary mt-3">Ändra</button>
+</form>
+<form action="/admin/users/{{ $user->id }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger mt-3">Ta Bort</button>
 </form>
 @endisset
 @endsection

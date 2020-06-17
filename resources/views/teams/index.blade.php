@@ -31,7 +31,7 @@
   <tbody>
     @foreach($teams as $team)
     <tr>
-      <td>{{ $team->name }}</td>
+      <td><a href="/admin/teams/{{$team->id}}">{{ $team->name }}</a></td>
       <td>{{ $team->activity->name }}</td>
     </tr>
     @endforeach

@@ -63,7 +63,7 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        return view('teams.show', ['team' => $team]);
     }
 
     /**
@@ -95,8 +95,11 @@ class TeamController extends Controller
      * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy($id)
     {
-        //
+        $team = Team::findOrFail($id);
+        $team->delete();
+
+        return redirect('/admin/teams')->with('msg', 'A team has been removed!');
     }
 }

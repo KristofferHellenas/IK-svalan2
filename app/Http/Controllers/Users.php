@@ -99,10 +99,7 @@ class Users extends Controller
      */
     public function edit(User $user)
     {
-<<<<<<< HEAD
-=======
         return view('users.show', ['user' => $user]);
->>>>>>> 1084363b9086ea9be1dd4168528dc6c7664c1bee
     }
 
     /**

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Users extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -32,6 +32,15 @@ class Users extends Controller
         $sum = $adult + $youth;
 
         return view('users.index', ['users' => $users,'paidcount' => $paidUsers, 'paidyouth' => $paidyouth, 'paidadult' => $paidadult, 'sum' => $sum]);
+    }
+
+    public function user()
+    {
+        // Get all the users from the database
+        $user = User::all();
+        // $users = DB::table('users')->get();
+
+        return view('user', ['user' => $user]);
     }
 
     /**

@@ -26,6 +26,8 @@ Route::post('/admin/teams', 'TeamController@store');
 
 Route::get('/admin/users', 'Users@index');
 
+Route::get('/user', 'Users@user');
+
 Route::post('/admin/users', 'Users@store');
 
 Route::get('/admin/activities', 'ActivityController@index');

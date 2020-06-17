@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class Users extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -19,6 +19,15 @@ class Users extends Controller
         // $users = DB::table('users')->get();
 
         return view('users.index', ['users' => $users]);
+    }
+
+    public function user()
+    {
+        // Get all the users from the database
+        $user = User::all();
+        // $users = DB::table('users')->get();
+
+        return view('user', ['user' => $user]);
     }
 
     /**

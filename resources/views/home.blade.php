@@ -9,9 +9,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     @can('isAdmin')
@@ -23,10 +23,11 @@
                     <h3><a href="/admin/activities">Aktiviteter</a></h3>
 
                     @elsecan('isMember')
-                    <p>You're a member</p> 
+                    <p>You're a member</p>
 
                     @elsecan('isUser')
-                    <p>You're a user</p>
+                    <a href="/user">Mina sidor</a>
+                    <br>
 
                     @endcan
                     You are logged in!

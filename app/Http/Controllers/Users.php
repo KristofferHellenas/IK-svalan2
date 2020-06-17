@@ -93,7 +93,7 @@ class Users extends Controller
      */
     public function edit(User $User)
     {
-        return view('/member',['user' => $User]);
+        return view('users.edit', ['user' => $user]);
     }
 
     /**
@@ -105,7 +105,13 @@ class Users extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
+        $user->birthday = $request->birthday;
+        $user->email = $request->email;
+        $user->updated_at = now();
+        $user->save();
+        return view('users.show', ['user' => $user]);
     }
 
     /**
@@ -116,6 +122,8 @@ class Users extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        $users = User::all();
+        return view('users.index', ['users' => $users]);
     }
 }

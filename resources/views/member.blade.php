@@ -21,14 +21,26 @@
     </thead>
 </table>
 
-<form action="/member/{{ Auth::user()->id }}" method="post">
+<form action="{{ route('users.update', Auth::user()->id) }}" method="post">
     <!-- {{-- @csrf = Cross sharing Resource Forgery --}} -->
     @csrf 
-    @method('put')
+    @method('patch')
     <label for="email">Ny mail:</label>
     <input type="text" name="email" value="{{ Auth::user()->email }}">
     <input type="submit" value="Byt Mail">
 </form>
 
-
+<h3 class="mt-3">Mina lag</h3>
+@foreach (auth()->user()->teams as $team) 
+<table>
+  <h3>{{ $team->activity->name }}</h3>
+  <h4>{{ $team-> name}}</h4>
+  @foreach ($team->users as $user)
+  <tr>
+    <td>{{ $user->firstname }}</td>
+  </tr>
+  @endforeach
+<table>
+</form>
+@endforeach
 @endsection

@@ -31,7 +31,7 @@ class Users extends Controller
         $adult = $paidadult * 500;
         $sum = $adult + $youth;
 
-        return view('users.index', ['users' => $users,'paidcount' => $paidUsers, 'paidyouth' => $paidyouth, 'paidadult' => $paidadult, 'sum' => $sum]);
+        return view('users.index', ['users' => $users, 'paidcount' => $paidUsers, 'paidyouth' => $paidyouth, 'paidadult' => $paidadult, 'sum' => $sum]);
     }
 
     public function user()
@@ -82,7 +82,7 @@ class Users extends Controller
      */
     public function show(User $user)
     {
-        return view ('show', ['user' => $user]);
+        return view('users.show', ['user' => $user]);
     }
 
     /**

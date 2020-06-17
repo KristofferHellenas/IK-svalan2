@@ -30,7 +30,7 @@
                     <br>
 
                     @endcan
-                    You are logged in!
+                    Du är inloggad!
                 </div>
             </div>
         </div>

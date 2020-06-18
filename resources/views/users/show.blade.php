@@ -7,8 +7,6 @@
 
 <h2>Ändra eller ta bort medlem</h2>
 
-
-
 <!-- Change member form -->
 <form action="/admin/users/{{$user->id}}" method="POST">
     @csrf

@@ -57,8 +57,6 @@
     <tr>
       <td><a href="/admin/users/{{$user->id}}">{{ $user->firstname }}</a></td>
       <td>{{ $user->lastname }}</td>
-
-
     </tr>
     @endforeach
   </tbody>

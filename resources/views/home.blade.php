@@ -16,7 +16,7 @@
 
                     @can('isAdmin')
                     <h3>Admin</h3>
-                    <p>{{ session('mssg') }}</p>
+
 
                     <h3><a href="/admin/users">Användare</a></h3>
                     <h3><a href="/admin/teams">Lag</a></h3>
@@ -27,7 +27,7 @@
 
                     @elsecan('isUser')
                     <a href="/user">Mina sidor</a>
-                    
+
                     @endcan
                     <br>
                     Du är inloggad!

@@ -4,7 +4,7 @@
 
 <a href="{{ route('home') }}">&laquo; Tillbaka</a>
 <h1>Skapa ny användare</h1>
-
+<p>{{ session('msg') }}</p>
 <!-- Add member form -->
 <form method="POST" action="/admin/users">
   @csrf
@@ -40,7 +40,7 @@
 </form>
 
 
-<h2>Ekonomi</h2>
+<h2 class="mt-3">Ekonomi</h2>
 <p>{{ $paidcount }} Betalande medlemmar</p>
 <p>{{ $paidyouth }} Betalande ungdomar</p>
 <p>{{ $paidadult }} Betalande vuxna</p>

@@ -63,9 +63,10 @@ class ActivityController extends Controller
      * @param  \App\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit(Activity $activity)
+    public function edit($id)
     {
-        //
+        $activity = Activity::find($id);
+        return view('activities.show', compact('name'));
     }
 
     /**
@@ -75,9 +76,15 @@ class ActivityController extends Controller
      * @param  \App\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Activity $activity)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name'    =>  'required',
+        ]);
+        $activity = Activity::find($id);
+        $activity->name = $request->get('name');
+        $activity->save();
+        return redirect()->route('activities.index')->with('msg', 'Data Updated');
     }
 
     /**

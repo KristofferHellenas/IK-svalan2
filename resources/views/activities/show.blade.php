@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="{{ route('home') }}">&laquo; Tillbaka</a>
+<a href="/admin/activities">&laquo; Gå tillbaka</a>
 <h1><u>{{$activity->name}}</u></h1>
 @isset($activity)
 
@@ -10,12 +10,12 @@
 
 
 <!-- Change member form -->
-<form action="/admin/activities" method="POST">
+<form action="{{action('ActivityController@update', $activity->id)}}" method="POST">
     @csrf
     @method('put')
     <div class="row">
         <div class="col mt-3">
-            <label for="name">Förnamn</label>
+            <label for="name">Aktivitetsnamn</label>
             <input type="text" class="form-control" name="name" value="{{$activity->name}}">
         </div>
     </div>

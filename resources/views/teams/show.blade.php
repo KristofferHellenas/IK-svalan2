@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="{{ route('home') }}">&laquo; Tillbaka</a>
+<a href="/admin/teams">&laquo; Gå tillbaka</a>
 <h1><u>{{$team->name}}</u></h1>
 @isset($team)
 
@@ -10,12 +10,12 @@
 
 
 <!-- Change member form -->
-<form action="/admin/teams" method="POST">
+<form action="{{action('TeamController@update', $team->id)}}" method="POST">
     @csrf
     @method('put')
     <div class="row">
         <div class="col mt-3">
-            <label for="name">Förnamn</label>
+            <label for="name">Lagets namn</label>
             <input type="text" class="form-control" name="name" value="{{$team->name}}">
         </div>
     </div>

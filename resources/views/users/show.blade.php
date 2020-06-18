@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="{{ route('home') }}">&laquo; Tillbaka</a>
+<a href="/admin/users">&laquo; Gå tillbaka</a>
 <h1><u>{{$user->firstname}} {{$user->lastname}}</u></h1>
 @isset($user)
 
@@ -10,9 +10,9 @@
 
 
 <!-- Change member form -->
-<form action="/admin/users/{{$user->id}}" method="POST">
+<form action="{{action('Users@updateUser', $user->id)}}" method="POST">
     @csrf
-    @method('patch')
+    @method('put')
     <div class="row">
         <div class="col mt-3">
             <label for="firstname">Förnamn</label>

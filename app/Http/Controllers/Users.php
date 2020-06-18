@@ -97,18 +97,35 @@ class Users extends Controller
      * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('users.show', ['user' => $user]);
+        $user = User::find($id);
+        return view('users.show', compact('firstname', 'lastname', 'birthday', 'email'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $User
+     * @param  \App\User  $team
      * @return \Illuminate\Http\Response
      */
+    public function updateUser(Request $request, $id)
+    {
+        $this->validate($request, [
+            'firstname'    =>  'required',
+            'lastname'    =>  'required',
+            'birthday'    =>  'required',
+            'email'    =>  'required'
+        ]);
+        $user = User::find($id);
+        $user->firstname = $request->get('firstname');
+        $user->lastname = $request->get('lastname');
+        $user->birthday = $request->get('birthday');
+        $user->email = $request->get('email');
+        $user->save();
+        return redirect()->route('users.index')->with('msg', 'Data Updated');
+    }
 
     /**
      * Remove the specified resource from storage.

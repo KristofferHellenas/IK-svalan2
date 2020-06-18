@@ -2,7 +2,7 @@
 
 @section("content")
 
-<a href="{{ route('home') }}">&laquo; Tillbaka</a>
+<a href="/home">&laquo; Gå tillbaka</a>
 <h1>Skapa ny användare</h1>
 
 <!-- Add member form -->
@@ -40,7 +40,7 @@
 </form>
 
 
-<h2>Ekonomi</h2>
+<h2 class="mt-4">Ekonomi</h2>
 <p>{{ $paidcount }} Betalande medlemmar</p>
 <p>{{ $paidyouth }} Betalande ungdomar</p>
 <p>{{ $paidadult }} Betalande vuxna</p>

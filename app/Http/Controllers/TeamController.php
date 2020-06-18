@@ -72,9 +72,10 @@ class TeamController extends Controller
      * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit($id)
     {
-        //
+        $team = Team::find($id);
+        return view('teams.show', compact('name'));
     }
 
     /**
@@ -84,9 +85,15 @@ class TeamController extends Controller
      * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name'    =>  'required',
+        ]);
+        $team = Team::find($id);
+        $team->name = $request->get('name');
+        $team->save();
+        return redirect()->route('teams.index')->with('msg', 'Data Updated');
     }
 
     /**

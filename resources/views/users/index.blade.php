@@ -42,11 +42,7 @@
 </form>
 
 
-<<<<<<< HEAD
-<h2 class="mt-4">Ekonomi</h2>
-=======
 <h2 class="mt-3">Ekonomi</h2>
->>>>>>> be4e998cc9626f027a927ec2e584f7cc2d49cb3a
 <p>{{ $paidcount }} Betalande medlemmar</p>
 <p>{{ $paidyouth }} Betalande ungdomar</p>
 <p>{{ $paidadult }} Betalande vuxna</p>

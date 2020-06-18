@@ -9,7 +9,7 @@
 
 @can('isAdmin')
 <!-- Change member form -->
-<form action="{{action('Users@updateUser', $user->id)}}" method="POST">
+<form action="{{action('Users@update', $user->id)}}" method="POST">
     @csrf
     @method('put')
     <div class="row">

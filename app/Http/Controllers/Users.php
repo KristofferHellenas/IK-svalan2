@@ -77,7 +77,7 @@ class Users extends Controller
 
         $user->save();
 
-        return redirect('/admin/users')->with('msg', 'A user has been added!');
+        return redirect('/admin/users')->with('msg', 'Ny användare har lagts till!');
     }
 
     /**
@@ -138,6 +138,6 @@ class Users extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect('/admin/users')->with('msg', 'A user has been removed!');
+        return redirect('/admin/users')->with('msg', 'Användaren har tagits bort!');
     }
 }

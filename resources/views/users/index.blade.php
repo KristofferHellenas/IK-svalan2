@@ -4,7 +4,9 @@
 
 <a href="/home">&laquo; Gå tillbaka</a>
 <h1>Skapa ny användare</h1>
+<p>{{ session('msg') }}</p>
 
+@can('isAdmin')
 <!-- Add member form -->
 <form method="POST" action="/admin/users">
   @csrf
@@ -40,7 +42,11 @@
 </form>
 
 
+<<<<<<< HEAD
 <h2 class="mt-4">Ekonomi</h2>
+=======
+<h2 class="mt-3">Ekonomi</h2>
+>>>>>>> be4e998cc9626f027a927ec2e584f7cc2d49cb3a
 <p>{{ $paidcount }} Betalande medlemmar</p>
 <p>{{ $paidyouth }} Betalande ungdomar</p>
 <p>{{ $paidadult }} Betalande vuxna</p>
@@ -57,11 +63,10 @@
     <tr>
       <td><a href="/admin/users/{{$user->id}}">{{ $user->firstname }}</a></td>
       <td>{{ $user->lastname }}</td>
-
-
     </tr>
     @endforeach
   </tbody>
 </table>
 
+@endcan
 @endsection

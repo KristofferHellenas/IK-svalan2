@@ -5,6 +5,8 @@
 <a href="{{ route('home') }}">&laquo; Tillbaka</a>
 <h1>Skapa ny användare</h1>
 <p>{{ session('msg') }}</p>
+
+@can('isAdmin')
 <!-- Add member form -->
 <form method="POST" action="/admin/users">
   @csrf
@@ -62,4 +64,5 @@
   </tbody>
 </table>
 
+@endcan
 @endsection

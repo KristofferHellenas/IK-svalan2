@@ -5,6 +5,7 @@
 <a href="{{ route('home') }}">&laquo; Tillbaka</a>
 <h1>Lag</h1>
 
+@can('isAdmin')
 <!-- Add team form -->
 <form  method="POST" action="/admin/teams">
   @csrf
@@ -38,4 +39,5 @@
   </tbody>
 </table>
 
+@endcan
 @endsection

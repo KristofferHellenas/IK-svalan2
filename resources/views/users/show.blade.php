@@ -7,6 +7,7 @@
 
 <h2>Ändra eller ta bort medlem</h2>
 
+@can('isAdmin')
 <!-- Change member form -->
 <form action="/admin/users/{{$user->id}}" method="POST">
     @csrf
@@ -39,5 +40,7 @@
     <button type="submit" class="btn btn-danger mt-3">Ta Bort</button>
 
 </form>
+
+@endcan
 @endisset
 @endsection

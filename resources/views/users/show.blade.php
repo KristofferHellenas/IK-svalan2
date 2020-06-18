@@ -37,6 +37,7 @@
     @csrf
     @method('DELETE')
     <button type="submit" class="btn btn-danger mt-3">Ta Bort</button>
+
 </form>
 @endisset
 @endsection
